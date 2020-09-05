@@ -13,12 +13,36 @@
             <h1>Revisit JS</h1>
         </header>
 
-        <div id="keyboard-wrapper">
-            <div id="output">
-                <p id="output-text">
-                </p>
-            </div>
-            <div id="keyboard"></div>
+        <div>
+            <h2>Exercice 1: Increment or decrement a number</h2>
+            <p>Enter a value</p>
+            <button onclick=decrementValue()>-</button>
+            <input type="text" id="number" value="0"/>
+            <button onclick=incrementValue()>+</button>
+        </div>
+
+        <div>
+            <h2>Exercice 2: Let's make some shopping</h2>
+            <ul id="items">
+                <li>
+                    <p class="object">Object 1</p>
+                    <p class="price">$20</p>
+                    <button>Add to cart</button>
+                </li>
+                <li>
+                    <p class="object">Object 2</p>
+                    <p class="price">$10</p>
+                    <button>Add to cart</button>
+                </li>
+                <li>
+                    <p class="object">Object 3</p>
+                    <p class="price">$30</p>
+                    <button>Add to cart</button>
+                </li>
+            </ul>
+            <div id="cart">You cart:</div>
+
+            
         </div>
 
         <script src="script.js"></script>
