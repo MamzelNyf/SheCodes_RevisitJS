@@ -44,9 +44,9 @@ window.onload = () => {
 
    // Ex3: load function on img
    const buttonTools = document.getElementById('list-tools').querySelectorAll('div')
-   buttonTools.forEach(button => {
-      button.addEventListener('click', pickTools)
-   });
+   for (var i = 0; i <  buttonTools.length; i++) {
+      buttonTools[i].addEventListener('click', pickTools)
+   };
 }
 function showCart(style) {
    document.getElementById('cart').style.display = style;
@@ -156,21 +156,28 @@ function purchaseClicked(e){
 //exercice3 
 
 function pickTools(){
-   const myPick = Math.floor(Math.random() * 3)+1
    let num = Math.floor(Math.random() * 3)+1
    // console.log(num)
    // console.log(this.id)
    let idTool = Number(this.id)
+   // console.log(idTool)
    let tool
    let result
+   //add an active class on the selected tool
+   var active = document.getElementsByClassName("active");
+    // If there's no active class
+   if (active.length > 0) {
+      active[0].className = active[0].className.replace(" active", "");
+   }
+    // Add the active class to the current/clicked button
+   this.className += " active";
    switch (num){
       case 1: 
          tool= "scissors";
-         console.log(num === 2)
          if (num === idTool){
             result = "Same! Let's play again!"
          }
-         else if (num === 2 ){
+         else if (idTool === 3 ){
             result = "You are the winner!"
          }
          else{
@@ -179,12 +186,12 @@ function pickTools(){
          break;
       case 2: 
          tool= "paper";
-         console.log(num)
+         //console.log(num)
 
          if (num === idTool){
             result = "Same! Let's play again!"
          }
-         else if (num === 1 ){
+         else if (idTool === 1 ){
             result = "You are the winner!"
          }
          else{
@@ -198,7 +205,7 @@ function pickTools(){
          if (num === idTool){
             result = "Same! Let's play again!"
          }
-         else if (num === 2 ){
+         else if (idTool === 2 ){
             result = "You are the winner!"
          }
          else{
@@ -206,6 +213,6 @@ function pickTools(){
          }
          break;
    }
-   let myPickDiv = `<div class="card"><img src="img/${tool}.jpg" alt="${tool}">${tool}</div><div id="result">${result}</div>`
+   let myPickDiv = `<div class="card">${tool}<img src="img/${tool}.jpg" alt="${tool}"></div><div id="result">${result}</div>`
    document.getElementById("my-pick").innerHTML = myPickDiv
 }

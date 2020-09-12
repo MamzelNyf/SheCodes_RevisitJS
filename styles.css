@@ -168,11 +168,13 @@ html, body {
 /* Exercice3  */
 #list-tools, #my-pick{
     display: flex;
+    height:200px;
 }
 .card{
     display: flex;
     flex-direction: column;
     width:200px;
+    text-align: center;
 }
 .card img{
     object-fit: contain;
@@ -187,4 +189,11 @@ html, body {
     font-size:30px;
     color: blue;
     padding: 50px;
+}
+.active{
+    font-weight: bold;
+    color: purple;
+}
+.active img{
+    border: 1px blue solid;
 }
